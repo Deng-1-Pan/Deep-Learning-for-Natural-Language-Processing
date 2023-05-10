@@ -1,13 +1,14 @@
 import numpy as np
 import pandas as pd
-from transformers import XLMRobertaTokenizer, TFXLMRobertaForSequenceClassification, TFXLMRobertaModel
+from transformers import XLMRobertaTokenizer, TFXLMRobertaModel
 import tensorflow as tf
+from sklearn.model_selection import train_test_split
 from sklearn.model_selection import StratifiedKFold
 
 
-train_df = pd.read_csv('train.csv')
+train_df = pd.read_csv('./Datasets/train.csv')
 
-from sklearn.model_selection import train_test_split
+
 
 train_data, test_data = train_test_split(train_df, test_size=0.2, random_state=141)
 
@@ -46,11 +47,9 @@ def cross_val_score(model, X, y, bs, cv=5):
 
     return np.mean(scores)
 
-# 预处理数据集 
 X_train = prepare_input(train_data['premise'].values + ' ' + train_data['hypothesis'].values)
 y_train = train_data['label'].values
 
-# 预处理测试集
 X_test = prepare_input(test_data['premise'].values + ' ' + test_data['hypothesis'].values)
 y_test = test_data['label'].values
 
@@ -117,13 +116,13 @@ def main_model_2(i,j,k,bs, lr):
     print(f"Test Accuracy for layer {i}-{j} with droprate {k} bs {bs}, lr {lr}: {accuracy}")
 
 print('Start Training single layer')
-for bs, lr in zip(*([32], [2e-5])):
+for bs, lr in zip(*([32, 64], [2e-5, 2e-5])):
     for i in [32, 64, 128, 256]:
         for j in [0.0, 0.2, 0.4]:
             main_model_1(i, j, bs, lr)
 
 print('Start Training two layer')
-for bs, lr in zip(*([32], [2e-5])):
+for bs, lr in zip(*([32, 64], [2e-5, 2e-5])):
     for i,j in zip(*([64,128,256], [32,64,128])):
         for k in [0.0, 0.2, 0.4]:
             main_model_2(i, j, k, bs, lr)
