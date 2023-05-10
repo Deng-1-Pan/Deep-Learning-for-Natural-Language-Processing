@@ -3,6 +3,14 @@
 ## Abstract
 This report focuses on the performance of four pre-trained models (BERT, DistilBERT, RoBERTa and XLM-RoBERTa) on a small dataset for textual entailment. By analysing the accuracy rates in both the training and testing phases, we found that XLM-RoBERTa performed relatively well. However, all models showed a significant drop in accuracy on the test set, suggesting the presence of overfitting. We also explore possible reasons affecting model performance, such as model architecture, number of parameters, pre-training strategy, hyperparameter settings and randomness factors. Finally, we suggest improvement directions to enhance the model's generalisation ability and performance on small datasets.
 
+## Ackownledgement
+Special thanks to those Notebooks to help me build up my code:
+- https://www.kaggle.com/code/anasofiauzsoy/tutorial-notebook
+- https://www.kaggle.com/code/rohanrao/tpu-sherlocked-one-stop-for-with-tf
+- https://www.kaggle.com/code/gazu468/all-about-bert-you-need-to-know
+- https://www.kaggle.com/code/vbookshelf/basics-of-bert-and-xlm-roberta-pytorch#Section-1
+
+
 ## Requirment
 - Python 3.8.5
 - Numpy 1.22.3
