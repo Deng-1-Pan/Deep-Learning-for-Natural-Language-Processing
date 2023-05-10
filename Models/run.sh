@@ -1,9 +1,9 @@
 #!/bin/bash
 
-python BERT.py | tee a.log
+python Models/BERT.py | tee log/a.log
 
-python distilbert.py | tee b.log
+python Models/distilbert.py | tee log/b.log
 
-python xlm-roberta.py | tee c.log
+python Models/xlm-roberta.py | tee log/c.log
 
-python Roberta.py | tee d.log
+python Models/Roberta.py | tee log/d.log
