@@ -1,7 +1,7 @@
 # Deep Learning for Natural Language Processing (ELEC0141) 23
 
 ## Abstract
-This report focuses on the performance of four pre-trained models (BERT, DistilBERT, RoBERTa and XLM-RoBERTa) on a small dataset for textual entailment. By analysing the accuracy rates in both the training and testing phases, we found that XLM-RoBERTa performed relatively well. However, all models showed a significant drop in accuracy on the test set, suggesting the presence of overfitting. We also explore possible reasons affecting model performance, such as model architecture, number of parameters, pre-training strategy, hyperparameter settings and randomness factors. Finally, we suggest improvement directions to enhance the model's generalisation ability and performance on small datasets.
+This report focuses on the performance of four pre-trained models (BERT, DistilBERT, RoBERTa and XLM-RoBERTa) on a small dataset for textual entailment. By analysing the accuracy in both the training and testing phases, we found that XLM-RoBERTa performed relatively well. However, all models showed a significant drop in accuracy on the test set, suggesting the presence of overfitting. We also explore possible reasons affecting model performance, such as model architecture, number of parameters, pre-training strategy, hyperparameter settings and randomness factors. Finally, we suggest improvement directions to enhance the model's generalisation ability and performance on small datasets.
 
 ## How to use the code
 - cd to thise folder in your Terminal
