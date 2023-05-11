@@ -7,6 +7,7 @@ This report focuses on the performance of four pre-trained models (BERT, DistilB
 - cd to thise folder in your Terminal
 - For Windows type the following in your Terminal: `Models/run.sh`
 - For Linux/Mac: `bash Models/run.sh`
+- The dataset: https://www.kaggle.com/competitions/contradictory-my-dear-watson/data
 
 **_!!!_** **Note**: On P100 GPU it will take approx 40 hours to train all files and on 3080Ti will take 20 hours.
 
